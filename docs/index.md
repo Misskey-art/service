@@ -31,7 +31,7 @@ Misskey.artには公式Discordサーバー[^1]があります。**「不具合�
 - [投稿ガイドライン](./guidelines/note_guidelines.md)
 - [NSFWガイドライン](./guidelines/nsfw_guidelines.md)
 - [自衛ガイドライン](./guidelines/self-defense_guidelines.md)
-- [投稿ガイドライン](./guidelines/report_guidelines.md)
+- [通報ガイドライン](./guidelines/report_guidelines.md)
 
 ### その他
 
