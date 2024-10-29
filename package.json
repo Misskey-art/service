@@ -1,0 +1,36 @@
+{
+	"name": "service-misskey-art",
+	"scripts": {
+		"dev": "vitepress dev docs",
+		"build": "vitepress build docs",
+		"preview": "vitepress preview docs",
+		"format": "prettier --write .",
+		"lint": "textlint .",
+		"prepare": "node .husky/install.mjs"
+	},
+	"type": "module",
+	"packageManager": "pnpm@9.12.3",
+	"dependencies": {
+		"lightningcss": "1.27.0",
+		"markdown-it-footnote": "4.0.0",
+		"viewerjs": "1.11.6",
+		"vitepress": "1.4.1",
+		"vitepress-plugin-image-viewer": "1.1.5",
+		"vue": "3.5.12"
+	},
+	"devDependencies": {
+		"@textlint-rule/textlint-rule-no-unmatched-pair": "2.0.3",
+		"husky": "9.1.6",
+		"lint-staged": "15.2.10",
+		"prettier": "3.3.3",
+		"textlint": "14.3.0",
+		"textlint-filter-rule-allowlist": "4.0.0",
+		"textlint-rule-no-dead-link": "5.2.0",
+		"textlint-rule-no-nfd": "2.0.2",
+		"textlint-rule-preset-jtf-style": "2.3.14",
+		"typescript": "5.6.3"
+	},
+	"engines": {
+		"npm": "This project is configured to use pnpm"
+	}
+}

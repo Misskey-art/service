@@ -1,0 +1,8 @@
+# Production
+/dist
+
+# Generated files
+.cache
+
+pnpm-lock.yaml
+/.husky/install.mjs

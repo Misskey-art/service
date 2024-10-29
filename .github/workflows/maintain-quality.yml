@@ -1,0 +1,35 @@
+name: Maintain code quality
+
+on:
+  push:
+  pull_request:
+  pull_request_review:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.fork
+    runs-on: arc-runner-set
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install pnpm
+        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
+        with:
+          run_install: false
+      - name: Install Node.js
+        uses: buildjet/setup-node@6131e76b005f1e3f5c721e0ca2d8279eb577c3a8 # v4.0.4
+        with:
+          node-version-file: ".node-version"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+      - name: Prettier
+        run: pnpm prettier --check .
+      - name: Lint
+        run: pnpm textlint .
+      - name: Build
+        run: pnpm build
